@@ -218,6 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d354e1787629743a9098a6ed3f4c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonVisual
+  _enemyAI: {fileID: 8445664691028307514}
+  _enemyEntity: {fileID: 4375162842689445194}
 --- !u!1 &5696848211795584193
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +231,7 @@ GameObject:
   - component: {fileID: 2646047705656916029}
   - component: {fileID: 5150585729598089580}
   - component: {fileID: 8973464968184107620}
+  - component: {fileID: 830602649374901116}
   - component: {fileID: 5376293913205560930}
   - component: {fileID: 4375162842689445194}
   - component: {fileID: 8445664691028307514}
@@ -329,6 +332,64 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.884616, y: 2.4499388}
   m_EdgeRadius: 0
+--- !u!60 &830602649374901116
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696848211795584193}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.2898235, y: 2.634628}
+      - {x: 1.3952479, y: 2.474891}
+      - {x: 0.72818136, y: 1.1890044}
+      - {x: 0.07058567, y: 0.93477273}
+      - {x: 0.8625231, y: 0.54735565}
+      - {x: 2.0429444, y: 0.48080647}
+      - {x: 2.877323, y: 0.66325665}
+      - {x: 3.5938082, y: 1.287261}
+      - {x: 3.5888596, y: 1.8089418}
+      - {x: 3.3169582, y: 2.1997712}
+      - {x: 2.8538654, y: 2.4544663}
+  m_UseDelaunayMesh: 1
 --- !u!195 &5376293913205560930
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -376,9 +437,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2962e8135d9a144a7d0fd451589967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  _startingState: 0
+  _startingState: 1
   _roamingDistanceMax: 7
   _roamingDistanceMin: 3
-  _roamingTimerMax: 2
-  _isChaisingEnemy: 0
-  _isAttackingEnemy: 0
+  _roamingTimerMax: 7
+  _chasingDistance: 4
+  _chasingSpeedMultipier: 2
+  _attackingDistance: 2
+  _attackRate: 2
+  _isChaisingEnemy: 1
+  _isAttackingEnemy: 1

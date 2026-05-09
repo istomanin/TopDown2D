@@ -1239,17 +1239,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2646047705656916029, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
   m_PrefabInstance: {fileID: 1943794059398450730}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1681089144 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8445664691028307514, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
-  m_PrefabInstance: {fileID: 1943794059398450730}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e2962e8135d9a144a7d0fd451589967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
 --- !u!1 &1842238055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,25 +1434,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4575708018689330153, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
-      propertyPath: _enemyAI
-      value: 
-      objectReference: {fileID: 1681089144}
     - target: {fileID: 5696848211795584193, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445664691028307514, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
-      propertyPath: _startingState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445664691028307514, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
-      propertyPath: _isChaisingEnemy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8445664691028307514, guid: fa18ba4acc2fa584192beaad9ffc3053, type: 3}
-      propertyPath: _roamingTimerMax
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
