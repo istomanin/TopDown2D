@@ -52,9 +52,16 @@ public class EnemyEntity : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("Skeleton Attack");
+    //}
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Skeleton Attack");
+        if(collision.transform.TryGetComponent( out Player player))            
+        {
+            player.TakeDamage(transform, _enemySO.enemyDamageAmount);
+        } 
     }
 
 

@@ -1,12 +1,11 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
 
-    private PlayerInputActions playerInputActions;
+    private PlayerInputActions _playerInputActions;
 
     public static GameInput Instance { get; private set; }
 
@@ -16,25 +15,15 @@ public class GameInput : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        playerInputActions = new PlayerInputActions();
-        playerInputActions.Enable();
+        _playerInputActions = new PlayerInputActions();
+        _playerInputActions.Enable();
+        _playerInputActions.Combat.Attack.started += PlayerAttack_started;
 
-
-        playerInputActions.Combat.Attack.started += PlayerAttack_started;
-
-    }
-
-
-    private void PlayerAttack_started(InputAction.CallbackContext obj)
-    {
-       
-        OnPlayerAttack.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVector()
     {
-        Vector2 _inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-
+        Vector2 _inputVector = _playerInputActions.Player.Move.ReadValue<Vector2>();
         return _inputVector;
     }
 
@@ -44,4 +33,15 @@ public class GameInput : MonoBehaviour
         Vector3 _mousePos = Mouse.current.position.ReadValue();
         return _mousePos;
     }
+
+    public void DisableMovment()
+    {
+        _playerInputActions.Disable();
+    }
+
+    private void PlayerAttack_started(InputAction.CallbackContext obj)
+    {
+        OnPlayerAttack.Invoke(this, EventArgs.Empty);
+    }
+
 }
