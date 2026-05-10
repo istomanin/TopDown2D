@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonVisual
   _enemyAI: {fileID: 8445664691028307514}
   _enemyEntity: {fileID: 4375162842689445194}
+  _enemyShadow: {fileID: 2043993557872950420}
 --- !u!1 &5696848211795584193
 GameObject:
   m_ObjectHideFlags: 0

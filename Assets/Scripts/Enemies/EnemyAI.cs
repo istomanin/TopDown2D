@@ -94,6 +94,12 @@ public class EnemyAI : MonoBehaviour
         MovementDirectionHendler();
     }
 
+    public void SetDeathState()
+    {
+        _navMeshAgent.ResetPath();
+        _currentState = State.Death;
+    }
+
     private void StateHandler()
     {
         switch (_currentState)
@@ -121,6 +127,7 @@ public class EnemyAI : MonoBehaviour
                 break;
 
             case State.Death:
+
 
                 break;
             default:
