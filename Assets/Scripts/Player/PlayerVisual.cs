@@ -4,6 +4,7 @@ public class PlayerVisual : MonoBehaviour
 {
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private FlashBlink _flashBlink;
 
 
     private const string IS_RUNNING = "isRunning";
@@ -13,6 +14,7 @@ public class PlayerVisual : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _flashBlink = GetComponent<FlashBlink>();
        
     }
 
@@ -24,6 +26,7 @@ public class PlayerVisual : MonoBehaviour
     private void Player_OnPlayerDeath(object sender, System.EventArgs e)
     {
         _animator.SetBool(IS_DIE, true);
+        _flashBlink.StopBlinking();
     }
 
     private void Update()

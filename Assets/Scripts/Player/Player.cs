@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public event EventHandler OnPlayerDeath;
+    public event EventHandler OnFlashBlink;
 
     [SerializeField] private float _playerSpeed = 5f;
     [SerializeField] private int _maxHealth = 10;
@@ -83,7 +84,7 @@ public class Player : MonoBehaviour
         if (_canTakeDamage && _isAlive)
         {
             _canTakeDamage = false;
-
+            OnFlashBlink?.Invoke(this, EventArgs.Empty);
             _currentHealth = Mathf.Max(0, _currentHealth -= damage);
             _knockBack.GetKnockBack(damegeSource);
             StartCoroutine(DamageRecoveryRoutine());
