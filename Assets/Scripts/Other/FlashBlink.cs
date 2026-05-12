@@ -6,7 +6,7 @@ public class FlashBlink : MonoBehaviour
 
 
 
-    [SerializeField] private MonoBehaviour _demagableObject;
+    [SerializeField] private MonoBehaviour _damagableObject;
     [SerializeField] private Material _blinkMaterial;
     [SerializeField] private float _blinkDuration = 0.2f;
 
@@ -24,15 +24,16 @@ public class FlashBlink : MonoBehaviour
         _isBlinking = true;
 
 
-        if(_demagableObject is Player)
-        {
-            (_demagableObject as Player).OnFlashBlink += DamagableObject_OnFlashBlink;
-        }
+      
     }
 
     private void DamagableObject_OnFlashBlink(object sender, EventArgs e)
     {
         SetBlinkingMaterial();
+        if (_damagableObject is Player)
+        {
+            (_damagableObject as Player).OnFlashBlink += DamagableObject_OnFlashBlink;
+        }
     }
 
     private void Update()
@@ -63,5 +64,13 @@ public class FlashBlink : MonoBehaviour
     {
         _blinkTimer = _blinkDuration;
         _spriteRenderer.material = _blinkMaterial;
+    }
+
+    private void OnDestroy()
+    {
+        if(_damagableObject is Player)
+        {
+            (_damagableObject as Player).OnFlashBlink -= DamagableObject_OnFlashBlink;
+        }
     }
 }

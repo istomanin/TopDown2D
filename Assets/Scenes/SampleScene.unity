@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 1250627582}
   - component: {fileID: 1250627581}
   - component: {fileID: 1250627583}
+  - component: {fileID: 1250627584}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -1055,6 +1056,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe5089db5ac434468b125c5c0a5cf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerVisual
+--- !u!114 &1250627584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250627579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2a573e1ea8e194082d2f061dccefd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashBlink
+  _demagableObject: {fileID: 1311856282}
+  _blinkMaterial: {fileID: 2100000, guid: 40019dee793bbd64f98d5b9882649d05, type: 2}
+  _blinkDuration: 0.2
 --- !u!1 &1311856281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _playerSpeed: 7
-  _maxHealth: 2
+  _maxHealth: 30
   _demegeRecoveryTime: 0.3
 --- !u!50 &1311856283
 Rigidbody2D:
