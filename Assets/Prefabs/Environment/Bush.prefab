@@ -204,5 +204,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9247be1226a3f724d9e4c9853550e3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractablePlantsVisual
-  _distractablePlants: {fileID: 2867507043498023431}
-  _bushDeathVFXPrefab: {fileID: 6751515335654677223, guid: 5d13ce93aeffda04b9810458a4db00e4, type: 3}
+  distractiblePlants: {fileID: 2867507043498023431}
+  bushDeathVFXPrefab: {fileID: 6751515335654677223, guid: 5d13ce93aeffda04b9810458a4db00e4, type: 3}

@@ -7,8 +7,8 @@ public class KnockBack : MonoBehaviour
 {
 
 
-    [SerializeField] private float _knockBackForce =3f;
-    [SerializeField] private float _knockBackMovingTimerMax =0.3f;
+    [SerializeField] private float knockBackForce =3f;
+    [SerializeField] private float knockBackMovingTimerMax =0.3f;
 
     private float _knockBackMovingTimer;
     private Rigidbody2D _rb;
@@ -29,22 +29,22 @@ public class KnockBack : MonoBehaviour
 
         if( _knockBackMovingTimer < 0)
         {
-            StopKnockBackMovment();
+            StopKnockBackMovement();
         }
 
 
     }
 
-    public void GetKnockBack(Transform damegeSoure)
+    public void GetKnockBack(Transform damageSource)
     {
         IsGettingKnockedBack = true;
-        _knockBackMovingTimer = _knockBackMovingTimerMax;
-        Vector2 difference = (transform.position - damegeSoure.position).normalized * _knockBackForce / _rb.mass;
+        _knockBackMovingTimer = knockBackMovingTimerMax;
+        Vector2 difference = (transform.position - damageSource.position).normalized * knockBackForce / _rb.mass;
         _rb.AddForce(difference, ForceMode2D.Impulse);
 
     }
 
-    public void StopKnockBackMovment()
+    public void StopKnockBackMovement()
     {
         _rb.linearVelocity = Vector2.zero;
         IsGettingKnockedBack=false;

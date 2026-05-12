@@ -7,13 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyAI))]
 public class EnemyEntity : MonoBehaviour
 {
-
-    //[SerializeField] private int _maxHealth;
-    [SerializeField] private EnemySO _enemySO;
+    
+    [SerializeField] private EnemySO enemySO;
 
     public event EventHandler OnTakeHit;
     public event EventHandler OnDeath;
 
+    
     private int _currentHealth;
 
    
@@ -31,7 +31,7 @@ public class EnemyEntity : MonoBehaviour
 
     private void Start()
     {
-        _currentHealth = _enemySO.enemyHealth;
+        _currentHealth = enemySO.enemyHealth;
     }
 
     public void TakeDamage(int damage)
@@ -50,17 +50,12 @@ public class EnemyEntity : MonoBehaviour
     {
         _polygonCollider2D.enabled = true;
     }
-
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Debug.Log("Skeleton Attack");
-    //}
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.transform.TryGetComponent( out Player player))            
         {
-            player.TakeDamage(transform, _enemySO.enemyDamageAmount);
+            player.TakeDamage(transform, enemySO.enemyDamageAmount);
         } 
     }
 

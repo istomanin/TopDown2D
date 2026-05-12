@@ -23,15 +23,15 @@ public class GameInput : MonoBehaviour
 
     public Vector2 GetMovementVector()
     {
-        Vector2 _inputVector = _playerInputActions.Player.Move.ReadValue<Vector2>();
-        return _inputVector;
+        Vector2 inputVector = _playerInputActions.Player.Move.ReadValue<Vector2>();
+        return inputVector;
     }
 
 
-    public Vector3 GetMousePosition()
+    public Vector2 GetMousePosition()
     {
-        Vector3 _mousePos = Mouse.current.position.ReadValue();
-        return _mousePos;
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        return mousePos;
     }
 
     public void DisableMovment()
@@ -41,7 +41,7 @@ public class GameInput : MonoBehaviour
 
     private void PlayerAttack_started(InputAction.CallbackContext obj)
     {
-        OnPlayerAttack.Invoke(this, EventArgs.Empty);
+        OnPlayerAttack?.Invoke(this, EventArgs.Empty);
     }
 
 }

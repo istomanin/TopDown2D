@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class SwordVisual : MonoBehaviour
 {
+    private static readonly int AttackHash = Animator.StringToHash(Attack);
     private Animator animator;
 
     [SerializeField] private Sword sword;
-    private const string ATTACK = "Attack";
+    private const string Attack = "Attack";
 
 
 
@@ -23,7 +24,7 @@ public class SwordVisual : MonoBehaviour
 
     private void Sword_OnSwordSwing(object sender, System.EventArgs e)
     {
-        animator.SetTrigger(ATTACK);
+        animator.SetTrigger(AttackHash);
     }
 
 

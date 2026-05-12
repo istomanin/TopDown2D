@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
+    private static readonly int Die = Animator.StringToHash(IsDie);
+    private static readonly int Running = Animator.StringToHash(IsRunning);
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private FlashBlink _flashBlink;
 
 
-    private const string IS_RUNNING = "isRunning";
-    private const string IS_DIE = "isDie";
+    private const string IsRunning = "isRunning";
+    private const string IsDie = "isDie";
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class PlayerVisual : MonoBehaviour
 
     private void Player_OnPlayerDeath(object sender, System.EventArgs e)
     {
-        _animator.SetBool(IS_DIE, true);
+        _animator.SetBool(Die, true);
         _flashBlink.StopBlinking();
     }
 
@@ -33,7 +35,7 @@ public class PlayerVisual : MonoBehaviour
     {
         if (Player.Instance.IsAlive())
         {
-            _animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
+            _animator.SetBool(Running, Player.Instance.IsRunning());
             AdjustPlayerFacingDirection();
         }
 
@@ -45,14 +47,7 @@ public class PlayerVisual : MonoBehaviour
         Vector3 mosPos = GameInput.Instance.GetMousePosition();
         Vector3 playerPos = Player.Instance.GetPlayerScreenPosition();
 
-        if (mosPos.x < playerPos.x)
-        {
-            _spriteRenderer.flipX = true;
-        }
-        else
-        {
-            _spriteRenderer.flipX = false;
-        }
+        _spriteRenderer.flipX = mosPos.x < playerPos.x; //поменял эту строчку помошник, я пока не оч понял этот момент
     }
 
     private void OnDestroy()

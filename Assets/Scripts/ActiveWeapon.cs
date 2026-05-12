@@ -33,14 +33,6 @@ public class ActiveWeapon : MonoBehaviour
         Vector3 mosPos = GameInput.Instance.GetMousePosition();
         Vector3 playerPos = Player.Instance.GetPlayerScreenPosition();
 
-        if (mosPos.x < playerPos.x)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        transform.rotation = Quaternion.Euler(0, mosPos.x < playerPos.x ? 180 : 0, 0);
     }
 }
