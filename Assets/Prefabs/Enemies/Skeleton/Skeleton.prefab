@@ -218,9 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d354e1787629743a9098a6ed3f4c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonVisual
-  enemyAI: {fileID: 0}
-  enemyEntity: {fileID: 0}
-  enemyShadow: {fileID: 0}
+  enemyAI: {fileID: 8445664691028307514}
+  enemyEntity: {fileID: 4375162842689445194}
+  enemyShadow: {fileID: 2043993557872950420}
 --- !u!1 &5696848211795584193
 GameObject:
   m_ObjectHideFlags: 0
