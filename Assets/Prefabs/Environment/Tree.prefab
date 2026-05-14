@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 6032469078097126536}
   - component: {fileID: 6931094091783710615}
   - component: {fileID: 8313614665803627322}
+  - component: {fileID: 7310043548536919801}
   - component: {fileID: 4182928614223815244}
+  - component: {fileID: 5025056299144359908}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -130,6 +132,43 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0055326982, y: 0.30962807}
   m_Size: {x: 1.5675375, y: 0.63768905}
   m_Direction: 1
+--- !u!70 &7310043548536919801
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044867417508064415}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.0054561836, y: 1.7784183}
+  m_Size: {x: 2.984984, y: 2.2495806}
+  m_Direction: 1
 --- !u!114 &4182928614223815244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +185,17 @@ MonoBehaviour:
   m_Center: {x: -0.018833876, y: 0.36906654, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &5025056299144359908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044867417508064415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8605d528c002d6c4fb01b3f7d4b6f56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransparencyDetection
+  transparencyAmount: 0.8
+  fadeTime: 0.3
