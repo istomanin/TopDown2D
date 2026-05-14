@@ -52,7 +52,7 @@ public class TransparencyDetection : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             
-            float newAlpha = Mathf.Lerp(startTransparencyAmount, targetTransparencyAmount,  elapsedTime/fadeTime);
+            float newAlpha = Mathf.Lerp(startTransparencyAmount, targetTransparencyAmount,  elapsedTime/fadeTimer);
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, newAlpha);
             
             yield return null;

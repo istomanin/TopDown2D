@@ -113,7 +113,7 @@ namespace NavMeshPlus.Extensions
                 foreach (var item in spriteMeshMap)
                 {
 #if UNITY_EDITOR
-                    Object.Destroy(item.Value);
+                    Object.DestroyImmediate(item.Value);
 #else 
                     Object.Destroy(item.Value);
 #endif
