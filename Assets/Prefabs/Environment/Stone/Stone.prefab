@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7832018530478673011}
   - component: {fileID: 4304158131388724436}
   - component: {fileID: -1140605188050943401}
-  - component: {fileID: 2867507043498023431}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -88,18 +87,6 @@ MonoBehaviour:
   m_Center: {x: 0.0060214996, y: 0.9584256, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
---- !u!114 &2867507043498023431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6320651701400906972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8688d3ecc86b02458b45428d5287370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DistractablePlants
 --- !u!1 &7199633516623679288
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9247be1226a3f724d9e4c9853550e3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractablePlantsVisual
-  distractiblePlants: {fileID: 2867507043498023431}
+  distractiblePlants: {fileID: 0}
   bushDeathVFXPrefab: {fileID: 3335064315513739378, guid: d8628b06c8e5afc448da0cf2f2b93df8, type: 3}
