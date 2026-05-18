@@ -1,5 +1,5 @@
 # 🎮 TopDown2D
-Данная игра была создана по серии уроков TinyGames. Игра в 2D формате с пиксельной графикой. Проект был создан для обучения создания игр, а так же для практики рабоыт с GitHub
+Данная игра была создана с целью обучения и практики рабоыт с unity, C# и GitHub . Игра в 2D формате с пиксельной графикой
 
 <p align="center">
   <img src="https://github.com/istomanin/TopDown2D/blob/main/Assets/Sprites/gif/TopDown2DGif.gif" width="600" alt="TopDown2D Gameplay">
